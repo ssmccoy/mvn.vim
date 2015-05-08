@@ -1,0 +1,41 @@
+*mvn.txt*       Maven Build Integration                 Apr 01, 2010
+
+Author:     Scott S. McCoy <tag@cpan.org>
+Copyright:  © 2010 Scott S. McCoy
+
+
+==============================================================================
+1. Contents
+
+	1. Contents.................: |mvn-contents|
+	2. Maven Setup..............: |mvn-setup|
+	3. Maven Usage..............: |mvn-usage|
+	   Alignment Commands.......: |mvn-commands|
+	     MvnFindClass...........: |mvn-findclass| |mvn-import|
+	     MvnListErrors..........: |mvn-listerrors|
+             MvnAutoCompile.........: |mvn-autocompile|
+
+==============================================================================
+2. Maven Setup
+
+        The maven plugin assumes "mvn" is available in your $PATH and that it
+        executes the desired version of maven.  All commands are executed from
+        vim, so your JAVA_HOME environment variable should be set.  You can set
+        this by adding the following to your .vimrc >
+                let $JAVA_HOME = '/usr/lib/jvm/java-6-sun/'
+<       
+
+==============================================================================
+2. Maven Usage
+
+CLASSPATH IMPORTING                     *mvn-findclass* *mvn-import*
+
+        The MvnFindClass accepts an argument of a class name and will search the
+        classpath as defined by the current project's maven pom to locate the given
+        class name in the list of available classes.  If more than one match is
+        found, the list of all matches is presented allowing a selection to be
+        made.  In example, the command <
+
+            :MvnFindClass "InputStream"
+
+>       will
